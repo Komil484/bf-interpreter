@@ -138,8 +138,10 @@ int main(int argc, char *argv[])
         if (ofile == NULL) {
             printf("Could not create/overwrite file \"%s\"\n", argv[2]);
         }
+        int data_end = DATA_SIZE;
+        while (data[--data_end] == 0) { }
 
-        for (unsigned int i = 0; i < DATA_SIZE; ++i) {
+        for (unsigned int i = 0; i <= data_end; ++i) {
             fprintf(ofile, "%.2X,", data[i]);
         }
     }
