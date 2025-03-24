@@ -6,7 +6,6 @@
 
 int main(int argc, char *argv[])
 {
-    printf("bf: initializing\n");
     unsigned char *data = calloc(DATA_SIZE, 1);
     unsigned int data_pointer = 0;
 
@@ -28,7 +27,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    printf("bf: reading input\n");
     {
         int unclosed_brackets = 0;
         int c;
@@ -74,7 +72,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    printf("bf: executing code\n");
     while (instr_pointer < instr_len) {
         switch (instr[instr_pointer]) {
         case '>':
